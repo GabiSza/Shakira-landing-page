@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Shakira</title>
+
+	<style>
+		/* CSS styles  */
+		body {
+			font-family: 'Courier New', Courier, monospace;
+			margin: 0;
+			padding: 0;
+			background-color: #FCB5AC;
+		}
+        /* navbar styling */
+        /* nav {
+            background-color: #B5E5CF;
+            color: #3D5B59;
+            font-size: medium;
+        } */
+        .navbar {
+            background-color: #FCB5AC;
+            color: #3D5B59;
+            font-size: medium;
+            display: flex;
+        
+        }
+
+        ul li {
+        list-style: none;
+        padding: 10px 20px;
+  
+    }
+  
+    ul li a {
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: bold;
+        color: #3D5B59;
+        position: relative;
+  
+    }
+  
+    ul li a::before {
+        content: "";
+        width: 0px;
+        height: 10px;
+        background: #B5E5CF;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transition: .5s;
+    }
+  
+    ul li a:hover::before {
+        width: 50%;
+        transform: translateX(100%);
+    }
+        footer {
+            background-color: #B5E5CF;
+            color: #B99095;
+            text-align: center;
+            padding: 2%;
+        }
+
+		.header {
+			background-color: #B5E5CF;
+			color: #B99095;
+			padding: 20px;
+			text-align: center;
+            font-size: 20px;
+		}
+
+		.main {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+		/* .photo {
+			display: block;
+			margin: 20px auto;
+			max-width: 100%;
+		} */
+
+		.bio {
+			font-size: 18px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+
+		.button {
+			background-color: #3D5B59;
+			color: white;
+            font-size: 20px;
+			padding: 10px 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+                        margin: auto;
+            display: flex;
+            justify-content: center; /* center the content horizontally */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 300px;
+            height:80px;
+            
+        }
+
+		.button:hover {
+			background-color: #B5E5CF;
+		}
+
+		* {box-sizing:border-box}
+
+        /* Slideshow container */
+        .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+        display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+        background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+        }
+        /* Style all font awesome icons */
+        .fa {
+            padding: 20px;
+        font-size: 30px;
+        width: 30px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+        color: #3D5B59;
+        }
+
+        /* Adding a hover effect */
+        .fa:hover {
+        opacity: 0.7;
+        }
+
+	</style>
+</head>
+<div class="nav">
+    <ul class=" navbar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#quotes">Quotes</a></li>
+        <li><a href="#">About Us</a></li>
+    </ul>
+</div>
+<body>
+    
+	
+
+
+	<div class="header">
+		<h1>Shakira</h1>
+		<p>Colombian singer, songwriter, dancer, and philanthropist known for her unique voice and fusion of Latin, Arabic, and rock music styles.</p>
+	</div>
+    <div class="main">
+
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 4</div>
+              <img src="https://hips.hearstapps.com/hmg-prod/images/shakira-attends-the-screening-of-elvis-during-the-75th-news-photo-1674595522.jpg?crop=0.662xw:1.00xh;0.128xw,0&resize=1200:*" style="width:100%">
+              <div class="text">Shakira is leading heartbroken women</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 4</div>
+              <img src="https://wwd.com/wp-content/uploads/2023/01/shakira-style-evolution-2.jpg" style="width:100%">
+              <div class="text">The queen of awards</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 4</div>
+              <img src="https://www.shape.com/thmb/lChVAQA0HToAeJpb9PNBU0ABYaQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Shakira-a-list-flex-GettyImages-1203660728-7bc019cd3d004303a6e3349f6b2c964a.jpg" style="width:100%">
+              <div class="text">Shakira on stage</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="https://www.record.com.mx/sites/default/files/articulos/2023/01/12/rolexreloj22-15.jpg" style="width:100%">
+                <div class="text">Shakira</div>
+              </div>
+          
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          
+          <!-- The dots/circles -->
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+          </div>
+		<!-- <img class="photo" src="https://www.lecturas.com/medio/2022/06/16/shakira_0653595c_800x800.jpg" alt="Shakira"> -->
+		<p class="bio" id="about">Shakira is a Colombian singer, songwriter, dancer, and record producer. She was born on February 2, 1977, in Barranquilla, Colombia. Shakira is known for her unique voice and her fusion of Latin, Arabic, and rock music styles. <br>
+            <br>Shakira has had several romantic relationships throughout her life. She was in a long-term relationship with Argentine lawyer Antonio de la Rúa from 2000 to 2010. The couple announced their separation in January 2011.
+
+            In 2011, Shakira began dating Spanish professional soccer player Gerard Piqué. They met while filming the music video for her song "Waka Waka (This Time for Africa)," which was the official song of the 2010 FIFA World Cup. Shakira and Piqué have two children together, Milan and Sasha, born in 2013 and 2015, respectively. They announced their separation last year, in 2022.<br>
+            <br>She started her music career at a young age and released her first album, Magia, in 1991. However, it was her fifth album, Laundry Service, released in 2001, that gained her international fame with hits such as "Whenever, Wherever" and "Underneath Your Clothes".<br>
+
+            <br>Shakira has since released several more successful albums, including Fijación Oral, Vol. 1 and Oral Fixation, Vol. 2, which won multiple Grammy Awards. She has sold over 70 million records worldwide and is considered one of the best-selling Latin music artists of all time.<br>
+            
+            <br>Aside from music, Shakira is also known for her philanthropic work, particularly through her <a href="https://fundacionpiesdescalzos.com/" target="_blank"> Pies Descalzos Foundation</a>, which focuses on improving education and healthcare for children in impoverished communities in Colombia.</p>
+		<button id="quotes" class="button" onclick="showQuote()">Show a Shakira quote</button>
+		<p id="quote"></p>
+	
+
+	
+	</div>
+	<script>
+		// JavaScript code
+		function showQuote() {
+			const quotes = [
+				"I believe that every single one of us, celebrity or not, has a responsibility to get involved in trying to make a difference in the world. Our generation faces many challenges, some of which were passed on to us by the past generations, but it's up to us to find solutions today so that we don't keep passing our problems on.",
+				"A man's car is like an extension of their ego and their manhood.",
+				"It doesn't bother me to talk about my private life, it doesn't bother me to talk about anything. My life is like a glass of water, transparent.",
+                "I do feel that I have to use my voice for those that don't have one. I have to do the best I can in my own work to represent my culture, represent the women of my country, of Latin America. What we stand for. What we're made of.",
+                "I always believed that women have rights and that there are some women that are intelligent enough to claim those rights. There are some others that are stupid enough not to.",
+                "I didn't expect babies to need so many diapers. Nobody told me they needed to be changed so often.",
+                "A kid cannot learn with an empty stomach.",
+                "I'm barefoot whenever I can be."
+			];
+			const quote = quotes[Math.floor(Math.random() * quotes.length)];
+			document.getElementById("quote").textContent = quote;
+		}
+
+		let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+	</script>
+</body>
+<footer>
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-linkedin"></a>
+    <p>© 2023 SheCodes Gabi Szabo. All rights reserved. | Privacy Policy | Terms of Use</p>
+</footer>
+</html>
