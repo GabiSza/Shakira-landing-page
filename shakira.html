@@ -4,7 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>Shakira</title>
+	
+    <title>Shakira</title>
 
 	<style>
 		/* CSS styles  */
@@ -12,16 +13,12 @@
 			font-family: 'Courier New', Courier, monospace;
 			margin: 0;
 			padding: 0;
-			background-color: #FCB5AC;
+			background-color: white;
 		}
         /* navbar styling */
-        /* nav {
-            background-color: #B5E5CF;
-            color: #3D5B59;
-            font-size: medium;
-        } */
+        
         .navbar {
-            background-color: #FCB5AC;
+            background-color: white;
             color: #3D5B59;
             font-size: medium;
             display: flex;
@@ -78,12 +75,6 @@
 			margin: 0 auto;
 			padding: 20px;
 		}
-
-		/* .photo {
-			display: block;
-			margin: 20px auto;
-			max-width: 100%;
-		} */
 
 		.bio {
 			font-size: 18px;
@@ -243,6 +234,105 @@
         text-decoration: underline;
         }
 
+         /* Style the button that has the collapsible content */
+        .collapsible {
+        background-color: #3D5B59;
+        color: white;
+        font-size: 20px;
+        padding: 10px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        margin: auto;
+        display: flex;
+        justify-content: center; /* center the content horizontally */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 300px;
+        height:80px;
+        }
+
+        /* Add a background color to the button if it is clicked on */
+        .active, .collapsible:hover {
+        background-color: #c7f2df;
+        }
+
+        /* Styling the collapsible content */
+        .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #a8cbbb;
+        }
+
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #B5E5CF;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a salmon background color to the cancel button */
+.form-container .cancel {
+  background-color: #FCB5AC;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
 	</style>
 </head>
 <div class="nav">
@@ -250,8 +340,10 @@
         <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#quotes">Quotes</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
+
+    
 </div>
 <body>
     
@@ -263,30 +355,32 @@
 		<p>Colombian singer, songwriter, dancer, and philanthropist known for her unique voice and fusion of Latin, Arabic, and rock music styles.</p>
 	</div>
     <div class="main">
+        <button id="quotes" class="button" onclick="showQuote()">Show a Shakira quote</button>
+		<p id="quote"></p>
 
         <div class="slideshow-container">
 
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
               <div class="numbertext">1 / 4</div>
-              <img src="https://hips.hearstapps.com/hmg-prod/images/shakira-attends-the-screening-of-elvis-during-the-75th-news-photo-1674595522.jpg?crop=0.662xw:1.00xh;0.128xw,0&resize=1200:*" style="width:100%">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/071/405/original/img1.jpg?1678712161" style="width:100%">
               <div class="text">Shakira is leading heartbroken women</div>
             </div>
           
             <div class="mySlides fade">
               <div class="numbertext">2 / 4</div>
-              <img src="https://wwd.com/wp-content/uploads/2023/01/shakira-style-evolution-2.jpg" style="width:100%">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/071/406/original/img2.jpg?1678712168" style="width:100%">
               <div class="text">The queen of awards</div>
             </div>
           
             <div class="mySlides fade">
               <div class="numbertext">3 / 4</div>
-              <img src="https://www.shape.com/thmb/lChVAQA0HToAeJpb9PNBU0ABYaQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Shakira-a-list-flex-GettyImages-1203660728-7bc019cd3d004303a6e3349f6b2c964a.jpg" style="width:100%">
+              <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/071/407/original/img3.jpg?1678712174" style="width:100%">
               <div class="text">Shakira on stage</div>
             </div>
             <div class="mySlides fade">
                 <div class="numbertext">4 / 4</div>
-                <img src="https://www.record.com.mx/sites/default/files/articulos/2023/01/12/rolexreloj22-15.jpg" style="width:100%">
+                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/071/408/original/img4.jpg?1678712181" style="width:100%">
                 <div class="text">Shakira</div>
               </div>
           
@@ -303,8 +397,10 @@
             <span class="dot" onclick="currentSlide(3)"></span>
             <span class="dot" onclick="currentSlide(4)"></span>
           </div>
-		<!-- <img class="photo" src="https://www.lecturas.com/medio/2022/06/16/shakira_0653595c_800x800.jpg" alt="Shakira"> -->
-		<p class="bio" id="about">Shakira is a Colombian singer, songwriter, dancer, and record producer. She was born on February 2, 1977, in Barranquilla, Colombia. Shakira is known for her unique voice and her fusion of Latin, Arabic, and rock music styles. <br>
+		
+		<button type="button" id="about" class="collapsible">About</button>
+        <div class="content">
+        <p class="bio" ">Shakira is a Colombian singer, songwriter, dancer, and record producer. She was born on February 2, 1977, in Barranquilla, Colombia. Shakira is known for her unique voice and her fusion of Latin, Arabic, and rock music styles. <br>
             <br>Shakira has had several romantic relationships throughout her life. She was in a long-term relationship with Argentine lawyer Antonio de la Rúa from 2000 to 2010. The couple announced their separation in January 2011.
 
             In 2011, Shakira began dating Spanish professional soccer player Gerard Piqué. They met while filming the music video for her song "Waka Waka (This Time for Africa)," which was the official song of the 2010 FIFA World Cup. Shakira and Piqué have two children together, Milan and Sasha, born in 2013 and 2015, respectively. They announced their separation last year, in 2022.<br>
@@ -313,8 +409,8 @@
             <br>Shakira has since released several more successful albums, including Fijación Oral, Vol. 1 and Oral Fixation, Vol. 2, which won multiple Grammy Awards. She has sold over 70 million records worldwide and is considered one of the best-selling Latin music artists of all time.<br>
             
             <br>Aside from music, Shakira is also known for her philanthropic work, particularly through her <a href="https://fundacionpiesdescalzos.com/" target="_blank"><b> Pies Descalzos Foundation</b></a>, which focuses on improving education and healthcare for children in impoverished communities in Colombia.</p>
-		<button id="quotes" class="button" onclick="showQuote()">Show a Shakira quote</button>
-		<p id="quote"></p>
+        </div>
+		
 	
 
 	
@@ -364,8 +460,48 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+//contact form opener
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+//code for collapsible
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
 
 	</script>
+<button id="contact" class="open-button" onclick="openForm()">Open Form</button>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Contact us</h1>
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter your name" name="name" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter your Email" name="email" required>
+
+   
+  <b><textarea type="text" id="message" placeholder="Your message" name="message" rows="5" cols="35" required></textarea></b>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
 </body>
 <footer>
     <a href="#" class="fa fa-facebook"></a>
