@@ -269,7 +269,7 @@
 
 
 .open-button {
-  background-color: #555;
+  background-color: #3D5B59;
   color: white;
   padding: 16px 20px;
   border: none;
@@ -331,19 +331,77 @@
 
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
-  opacity: 1;
+  opacity: 3;
+}
+
+
+
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width:100%;
+  
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
 }
 	</style>
 </head>
+
+
 <div class="nav">
     <ul class=" navbar">
         <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#quotes">Quotes</a></li>
-        <li><a href="#contact">Contact</a></li>
+       <li><a href="#contact">Contact</a></li>
     </ul>
 
-    
 </div>
 <body>
     
@@ -397,7 +455,7 @@
             <span class="dot" onclick="currentSlide(3)"></span>
             <span class="dot" onclick="currentSlide(4)"></span>
           </div>
-		
+        </div>
 		<button type="button" id="about" class="collapsible">About</button>
         <div class="content">
         <p class="bio" ">Shakira is a Colombian singer, songwriter, dancer, and record producer. She was born on February 2, 1977, in Barranquilla, Colombia. Shakira is known for her unique voice and her fusion of Latin, Arabic, and rock music styles. <br>
@@ -414,8 +472,36 @@
 	
 
 	
-	</div>
+  <!-- Contact form in pop-up form -->
+<!-- button that opens the form -->
+ <button type="button" id="contact" class="open-button" onclick="openForm()" >Open Form</button>
+
+<!-- the pop up form block itself -->
+ <div class="form-popup"  id="myForm">
+  <form class="form-container">
+    <h1>Contact us</h1>
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter your name" name="name" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter your Email" name="email" required>
+
+   
+  <b><textarea type="text" id="message" placeholder="Your message" name="message" rows="5" cols="35" required></textarea></b>
+  
+  <div class="popup">
+    <button id="nextStep" type="submit" class="btn" style="width:100%;" onclick="myFunction()">Send</button>
+    <span class="popuptext" id="myPopup">Thank you for sending your message!</span>
+  </div>
+
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
 	<script>
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
 		// JavaScript code
 		function showQuote() {
 			const quotes = [
@@ -462,12 +548,14 @@ function showSlides(n) {
 }
 //contact form opener
 function openForm() {
+  
   document.getElementById("myForm").style.display = "block";
 }
-
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
+
+
 //code for collapsible
 var coll = document.getElementsByClassName("collapsible");
 var i;
@@ -485,23 +573,7 @@ for (i = 0; i < coll.length; i++) {
 }
 
 	</script>
-<button id="contact" class="open-button" onclick="openForm()">Open Form</button>
-<div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
-    <h1>Contact us</h1>
-    <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter your name" name="name" required>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter your Email" name="email" required>
-
-   
-  <b><textarea type="text" id="message" placeholder="Your message" name="message" rows="5" cols="35" required></textarea></b>
-
-    <button type="submit" class="btn">Send</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
-</div>
 </body>
 <footer>
     <a href="#" class="fa fa-facebook"></a>
